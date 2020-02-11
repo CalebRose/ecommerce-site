@@ -9,7 +9,7 @@ const HomePage = () => {
       <div className="directory-menu">
         <HomeMenuItem name="Argyle" />
         <HomeMenuItem name="Striped" />
-        <HomeMenuItem name="Wool" />
+        <HomeMenuItem name="Hipster" />
         <HomeMenuItem name="Athletic" />
         <HomeMenuItem name="Pop Culture" />
       </div>

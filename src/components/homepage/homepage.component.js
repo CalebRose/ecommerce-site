@@ -11,7 +11,7 @@ const HomePage = () => {
         <HomeMenuItem name="Striped" />
         <HomeMenuItem name="Wool" />
         <HomeMenuItem name="Athletic" />
-        <HomeMenuItem name="Nerd" />
+        <HomeMenuItem name="Pop Culture" />
       </div>
     </div>
   );

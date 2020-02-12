@@ -14,40 +14,43 @@ class Directory extends Component {
         name: "Argyle",
         imageUrl: argyle,
         size: "",
-        id: 1
+        id: 1,
+        linkUrl: "argyle"
       },
       {
         name: "Striped",
         imageUrl: striped,
         size: "",
-        id: 2
+        id: 2,
+        linkUrl: ""
       },
       {
         name: "Knit",
         imageUrl: knit,
         size: "",
-        id: 3
+        id: 3,
+        linkUrl: ""
       },
       {
         name: "Athletic",
         imageUrl: athletic,
         size: "large",
-        id: 4
+        id: 4,
+        linkUrl: ""
       },
       {
         name: "Pop Culture",
         imageUrl: pop,
         size: "large",
-        id: 5
+        id: 5,
+        linkUrl: ""
       }
     ]
   };
 
   render() {
-    let items = this.state.sections.map(({ name, imageUrl, id, size }) => {
-      return (
-        <HomeMenuItem key={id} name={name} imageUrl={imageUrl} size={size} />
-      );
+    let items = this.state.sections.map(({ id, ...sectionProps }) => {
+      return <HomeMenuItem key={id} {...sectionProps} />;
     });
     return <div className="directory-menu">{items}</div>;
   }

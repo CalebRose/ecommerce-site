@@ -1,3 +1,14 @@
+# Ecommerce Site
+
+## Tech Stack
+
+Front End: Javascript, React
+Back End: Node.js
+Styling: Sass
+Database: Firebase
+
+## React Info
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

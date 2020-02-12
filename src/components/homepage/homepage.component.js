@@ -1,18 +1,12 @@
 import React, { Component } from "react";
-import HomeMenuItem from "./MenuItem/MenuItem.component.js";
 import "./homepage.styles.scss";
+import Directory from "../directory/directory.component.js";
 
 const HomePage = () => {
   //
   return (
     <div className="homepage">
-      <div className="directory-menu">
-        <HomeMenuItem name="Argyle" />
-        <HomeMenuItem name="Striped" />
-        <HomeMenuItem name="Hipster" />
-        <HomeMenuItem name="Athletic" />
-        <HomeMenuItem name="Pop Culture" />
-      </div>
+      <Directory />
     </div>
   );
 };

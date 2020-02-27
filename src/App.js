@@ -4,21 +4,44 @@ import HomePage from "./components/homepage/homepage.component";
 import ShopPage from "./components/shop/shop.component";
 import "./App.css";
 import Header from "./components/header/header.component";
+import SignInPage from "./components/sign-in-register/sign-in-registration.components";
+import { auth } from "./firebase/firebase.utils";
 
-function App() {
-  return (
-    <div>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          {/* <Route exact path="/topics" component={TopicsList} />
+class App extends React.Component {
+  state = {
+    currentUser: null
+  };
+
+  unSubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unSubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+    });
+  }
+
+  componentWillUnmount() {
+    this.unSubscribeFromAuth();
+  }
+
+  render() {
+    console.log(this.state.currentUser);
+    return (
+      <div>
+        <Router>
+          <Header currentUser={this.state.currentUser} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route path="/signin" component={SignInPage} />
+
+            {/* <Route exact path="/topics" component={TopicsList} />
         <Route path="/topics/:topicId" component={TopicDetail} /> */}
-        </Switch>
-      </Router>
-    </div>
-  );
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
